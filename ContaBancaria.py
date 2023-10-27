@@ -6,32 +6,33 @@ class ContaBancaria:
         self.tipo = tipo
         self.limite = limite
         self.status = status
-        self.depositar = 900
+
     def verificarsaldo(self):
         print(f"Saldo: R$ {self.saldo}")
 
-    def ativar(self):
+    def statuss(self):
         if self.status == True:
             print("Sua conta está ativa")
         else:
             print("Sua conta não está ativa")
 
-    def limi(self):
-        self.limite = self.saldo + 600 
-        print(f"seu limite é de: R${self.limite}")
+    def limitee(self):
+        limite =  8000
+        print(f"seu limite é de: R${limite}")
 
-    def depo(self):
-        self.depositar = self.saldo 
-        print(f"valor depositado na sua conta {self.saldo}") 
+    def depositaa(self,depositar):
+        self.saldo = self.saldo + depositar
+        print(f"você recebeu um deposito de: {depositar} e esta com {self.saldo}")
 
-tanus = ContaBancaria(numero=3431, saldo=2200, nome="tanus", tipo="corrente", limite=7, status=True)
+    def saquee(self,sacar):
+        self.saldo = self.saldo - sacar
+        print(f"voce sacou: R${sacar} e esta com {self.saldo}")
+
+
+tanus = ContaBancaria(numero=3431, saldo=2200, nome="tanus", tipo="corrente", limite=1, status=True)
 print(f"Numero da conta:{tanus.numero} , Nome do usuario:{tanus.nome} Saldo:{tanus.saldo} Tipo da conta:{tanus.tipo} limite :{tanus.limite} {tanus.status}")
 tanus.verificarsaldo()
-tanus.ativar()
-tanus.limi()
-tanus.depo()
-
-
-
-
-
+tanus.statuss()
+tanus.depositaa(800)
+tanus.limitee()
+tanus.saquee(12)
